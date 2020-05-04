@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700');
 
 html, body{
+	scroll-behavior: smooth;
 	height:100%;
 	width:100%;
-	font-family: 'Poppins',sans-serif;
+	font-family: 'Montserrat',serif;
 	color:#222;
 }
 
@@ -12,12 +13,10 @@ html, body{
 	padding:.8rem;
 }
 
-
-
-
-
-
-
+#name{
+	font-family: serif;
+	font-size: 200%;
+}
 
 
 /*---Firefox Bug Fix --*/
@@ -30,9 +29,10 @@ html, body{
 }
 /*--- Fixed Background Image --*/
 figure {
+
   position: relative;
   width: 100%;
-  height: 60%;
+  height: 100%;
   margin: 0!important;
 }
 .fixed-wrap {
@@ -44,7 +44,7 @@ figure {
   height: 100%;
 }
 #fixed {
-  background-image: url('img/mac.png');
+  background-image: url('img/0086-09.jpg');
   position: fixed;
   display: block;
   top: 0;
@@ -57,13 +57,38 @@ figure {
           transform: translateZ(0);
   will-change: transform;
 }
+.cover-caption{
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	color: #fff;
+	
+	text-align: center;
+
+	/*margin-bottom: .5rem;*/
+	line-height: 1.2;
+}
+
+.cover-caption h1 {
+	position:absolute
+	margin:0%;
+	font-size: 500%;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 15px #000;
+
+
+}
+
+
+
 /*--- Bootstrap Padding Fix --*/
 .navbar {
     padding: .8rem;
 }
 
 .navbar-nav li{
-	padding right:20px;
+	padding-right:20px;
 
 }
 .nav-link{
@@ -83,9 +108,10 @@ figure {
 }
 
 .carousel-caption h1 {
-	font-size: 500%;
+	font-size: 300%;
 	text-transform: uppercase;
 	text-shadow: 1px 1px 15px #000;
+	padding-bottom: 1rem;
 }
 
 .carousel-caption h3{
@@ -95,15 +121,34 @@ figure {
 	padding-bottom: 1rem;
 }
 
-.btn-primary {
-	background-color: #6648b1;
-	border: 1px solid #563d7c;
+.carousel-caption p{
+	padding-bottom: 1rem;
+}
+.carousel .carousel-control-prev  { visibility: hidden; }
+.carousel:hover .carousel-control-prev { visibility: visible; }
+.carousel .carousel-control-next  { visibility: hidden; }
+.carousel:hover .carousel-control-next { visibility: visible; }
+.carousel-caption-container{
+ text-align: center;
+}
 
+.carousel-caption{
+  opacity:0;
+  transition:500ms ease-in-out;
+}
+.carousel-item:hover .carousel-caption{
+  opacity:1;
+}
+.btn-primary {
+	background-color: #BBD1D5;
+	border: 1px solid #05828E;
+	color: #222;
 }
 
 .btn-primary:hover {
-	background-color: #563d7c;
-	border: 1px solid #563d7c;
+	background-color: #05828E;
+	border: 1px solid #05828E;
+	color:#222;
 }
 
 .jumbotron {
@@ -111,11 +156,14 @@ figure {
 	border-radius:0;
 
 }
-
-.padding {
-	padding-bottom:2rem;
+.row{
+	/*vertical-align: middle;*/
 
 }
+/*.padding {
+	padding-bottom:2rem;
+
+}*/
 
 .welcome {
 	width:75%;
@@ -152,6 +200,10 @@ figure {
 
 }
 
+#icon {
+	width: 30%;
+	object-position: center;
+}
 .gif {
 	max-width:100%;
 }
@@ -161,26 +213,18 @@ figure {
 	padding:3rem;
 
 }
-.fa-facebook{
-	color:#3b5998;
+.fa-linkedin-in{
+	color:#0e76a8 ;
 }
 
-.fa-twitter{
-	color:#00aced;
-}
-.fa-google-plus-g{
+.fa-google{
 	color: #dd4b39;
 }
 
-.fa-instagram{
-	color:#517fa4;
-}
 
-.fa-youtube {
-	color:#bb0000;
-}
 
-.fa-facebook:hover, .fa-twitter:hover, .fa-google-plus-g:hover, .fa-instagram:hover, .fa-youtube:hover{
+
+.fa-linkedin-in:hover, , .fa-google:hover, {
 	color:#d5d5d5;
 }
 
@@ -188,6 +232,8 @@ footer{
 	background-color: #3f3f3f;
 	color:#d5d5d5;
 	padding:2rem;
+	
+
 }
 
 hr.light{
@@ -207,7 +253,15 @@ hr.light-100{
 	margin-bottom: 1rem;
 }
 
+.featured-text-right {
+    padding-right:2rem;
+    border-right: 0.5rem solid #64a19d;
+ 	}
 
+.featured-text-left {
+    padding-left:2rem;
+    border-left: 0.5rem solid #64a19d;
+ 	}
 
 
 /*---Media Queries --*/
@@ -215,8 +269,9 @@ hr.light-100{
 	.social a {
 		font-size:4em;
 		padding:2rem;
-
 	}
+
+
   }
 @media (max-width: 768px) {
 .carousel-caption{
@@ -226,11 +281,21 @@ hr.light-100{
 .carousel-caption h1 {
 	font-size: 350%;
 }
+.cover-caption{
+	top:45%;
+}
+.cover-caption .btn {
+	font-size:95%;
+	padding:8px 14px;
+}
+.cover-caption h1 {
+	font-size: 350%;
+}
 
 .carousel-caption h3{
 	font-size:140%;
 	font-weight: 400%;
-	padding-bottom: .2rem
+	padding-bottom: .2rem;
 
 }
 .carousel-caption .btn {
@@ -256,12 +321,32 @@ hr.light-100{
 
 .carousel-caption h3{
 	font-size:110%;
-
+}
+.carousel-caption p{
+	display:none;
 }
 .carousel-caption .btn {
 	font-size:90%;
 	padding:4px 8px;
 }
+
+.cover-caption{
+	top:50%;
+}
+
+.cover-caption h1 {
+	font-size: 250%;
+}
+
+.cover-caption h3{
+	font-size:110%;
+
+}
+.cover-caption .btn {
+	font-size:90%;
+	padding:4px 8px;
+}
+
 .carousel-indicators {
 	display:none;
 }
